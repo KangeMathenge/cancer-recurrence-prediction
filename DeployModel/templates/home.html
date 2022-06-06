@@ -1,0 +1,71 @@
+{% load bootstrap5 %}
+<head>
+    <title>Prediction</title>
+</head>
+<style>
+    .form-input{
+        padding: 70px 0 0 0;
+        height: 100vh;
+    }
+    .form-control{
+        margin: 10px;
+    }
+    form{
+        margin: 10px auto;
+    }
+    .content-section{
+        margin: 10px auto;
+
+    }
+</style>
+<div class="content-section" style="width: 70%; ">
+<form action="{% url 'result' %}" method="get" class="form-input">
+
+    {%csrf_token%}
+    <p style="font-size: 30px;">Please enter the required information</p>
+    <div class="form-group">
+    <label > Age : </label>
+    <input class="form-control" min="0" type="number" step="0.01" required name="age">
+    </div>
+    <div class="form-group">
+    <label>Menopause:</label>
+    <select class="form-control" required name="menopause">        
+        <option class="form-control" disabled selected value>--Select an option--</option>
+        <option class="form-control" value="1">Premenstral</option>
+        <option class="form-control" value="0">Postmenstral</option>
+      </select>
+    <!-- <input class="form-control" type="number" maxlength="1" required name="menopause"> -->
+    </div>
+    
+    <div class="form-group">
+    <label >Tumor size(diameter in mm):</label>
+    <input class="form-control" type="number" required name="tumorSize">
+    </div>
+    <div class="form-group">
+    <label >Number of axillary lymph nodes affected (0-39) :</label>
+    <input class="form-control" type="number" min="0" max="39" required name="invNodes">
+    </div>
+    <div class="form-group">
+    <label >Did the cancer invade surrounding tissue:</label>
+    <select class="form-control" required name="nodeCaps">        
+        <option class="form-control" disabled selected value>--Select an option--</option>
+        <option class="form-control" value="1">Yes</option>
+        <option class="form-control" value="0">No</option>
+    </select>
+    <!-- <input class="form-control" type="number" maxlength="1" required name="nodeCaps"> -->
+    </div>
+    <div class="form-group">
+    <label >Degree of malignancy(grade range 1-3):</label>
+    <select class="form-control" required name="degMalig">        
+        <option class="form-control" disabled selected value>--Select an option--</option>
+        <option class="form-control" value="1">Grade 1: Cells retain usual characteristics</option>
+        <option class="form-control" value="2">Grade 2: Cells are relatively abnormal</option>
+        <option class="form-control" value="3">Grade 3: Cells are highly abnormal</option>
+    </select>
+    <!-- <input class="form-control" type="number" maxlength="3" required name="degMalig"> -->
+    </div>
+
+    <input class="btn form-control" style="background-color: cadetblue;" type="submit" name="" value="submit">
+</form>
+
+</div>

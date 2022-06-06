@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<body>
+This is a results page
+
+The result is <strong>{{result}}</strong> <br>
+<p>The data you entered entered is predicted to have {{result}} please Discuss with you clinician on the next step </p>
+
+<!--<pre>-->
+<!--    Breast cancer is :-->
+<!--    -&#45;&#45;0 non-recurrent-->
+<!--    -&#45;&#45;1 recurrent-->
+<!--</pre>-->
+
+<a href="{% url 'home' %}">back home</a>
+</body>
+</html>
