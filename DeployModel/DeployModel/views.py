@@ -19,17 +19,6 @@ def getPrediction(age,menopause,tumorSize,invNodes,nodeCaps,degMalig):
 
 def result(request):
 
-    # recurrence_classifier = joblib.load('finalized_model2.sav')
-    # list = []
-    # list.append(float(request.GET['age']))
-    # list.append(int(request.GET['menopause']))
-    # list.append(int(request.GET['tumorSize']))
-    # list.append(int(request.GET['invNodes']))
-    # list.append(int(request.GET['nodeCaps']))
-    # list.append(int(request.GET['degMalig']))
-    ##print(list)
-    # ModelPredictions = recurrence_classifier.predict([list]) {'ModelPredictions: ':ModelPredictions,'list: ': list}
-
     age = float(request.GET['age'])
     menopause = int(request.GET['menopause'])
     tumorSize = int(request.GET['tumorSize'])
